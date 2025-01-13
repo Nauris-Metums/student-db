@@ -19,7 +19,7 @@ int main() {
 	int err = 0;
 	
 	printf("Do you want to read existing student data?(1/0)\n");
-	scanf("%d", &yn);
+	scanf(" %d", &yn);
 	if ( yn == 1 ) {
 		printf("Reading %s\n", file);
 		data = data_read( file, &c );
@@ -33,16 +33,16 @@ int main() {
 		return 0;
 	}
 	
-	printf("Please enter number of students: ");
-	scanf("%d", &c);
+	printf("Please enter number of students:\n");
+	scanf(" %d", &c);
 	
 	s = (struct student *)malloc( sizeof(struct student) * c );
 	
 	data_input( c, s );
 	data_output( c, s );
 	
-	printf("Do you want to save the data(1/0)?");
-	scanf("%d", &yn);
+	printf("Do you want to save the data(1/0)?\n");
+	scanf(" %d", &yn);
 	if ( yn == 1 ) {
 		printf("Save data to %s ...\n", file);
 		err = data_save( c, s, file );
